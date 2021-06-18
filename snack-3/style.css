@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+ul{
+    display: flex;
+    
+}
+ul li{
+    flex-basis: 33.33%;
+    list-style: none;
+    border: 1px solid #ccc;
+}
+
