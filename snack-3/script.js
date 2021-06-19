@@ -28,8 +28,7 @@ console.log(serieA);
 // nome
 // punti fatti
 // falli subiti
-// Stampare in html (in forma tabellare!!!
-//      :allegria::allegria:) i dati relativi 
+// Stampare in html  i dati relativi 
 // alle squadre evidenziando in giallo la riga corrispondente 
 // alla squadra con più falli subiti.
 let table = document.getElementById("contenitore");
@@ -40,16 +39,12 @@ for (let x = 0; x < serieA.length; x++) {
     if (falli > falliMinore){
         falliPiuAlti = serieA[x];
         falliMinore = falli;
-        table.innerHTML += `
-        <ul>
-            
-        </ul>
-        `
     }
 }
 for(let x = 0; x < serieA.length; x++){
     const { nome, punti, falli } = serieA[x];
-    table.innerHTML +=
+    if(falli < falliMinore){
+        table.innerHTML +=
     `
     <ul>
         <li>${nome}</li>
@@ -57,5 +52,16 @@ for(let x = 0; x < serieA.length; x++){
         <li>${falli}</li>
     </ul>
     `
+    }else{
+        table.innerHTML += `
+        <ul style="background-color: yellow;">
+            <li>${nome}</li>
+            <li>${punti}</li>
+            <li>${falli}</li>
+        </ul>
+        `
+    }
+    
 }
 console.log(serieA);
+
