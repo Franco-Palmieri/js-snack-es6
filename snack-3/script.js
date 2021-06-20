@@ -41,27 +41,50 @@ for (let x = 0; x < serieA.length; x++) {
         falliMinore = falli;
     }
 }
-for(let x = 0; x < serieA.length; x++){
-    const { nome, punti, falli } = serieA[x];
-    if(falli < falliMinore){
-        table.innerHTML +=
-    `
-    <ul>
-        <li>${nome}</li>
-        <li>${punti}</li>
-        <li>${falli}</li>
-    </ul>
-    `
-    }else{
-        table.innerHTML += `
-        <ul style="background-color: yellow;">
-            <li>${nome}</li>
-            <li>${punti}</li>
-            <li>${falli}</li>
+for (let x = 0; x < serieA.length; x++){
+    if(serieA[x].falli < falliMinore){
+        table.innerHTML += 
+        `
+        <ul>
+            <li>${serieA[x].nome}</li>
+            <li>${serieA[x].punti}</li>
+            <li>${serieA[x].falli}</li>
         </ul>
         `
+    }else{
+        table.innerHTML +=
+        `
+        <ul style="background-color: yellow;">
+            <li>${serieA[x].nome}</li>
+            <li>${serieA[x].punti}</li>
+            <li>${serieA[x].falli}</li>
+        </ul>
+        `
+
     }
-    
 }
 console.log(serieA);
 
+// è uguale a :
+
+// for(let x = 0; x < serieA.length; x++){
+//     const { nome, punti, falli } = serieA[x];
+//     if(falli < falliMinore){
+//         table.innerHTML +=
+//     `
+//     <ul>
+//         <li>${nome}</li>
+//         <li>${punti}</li>
+//         <li>${falli}</li>
+//     </ul>
+//     `
+//     }else{
+//         table.innerHTML += `
+//         <ul style="background-color: yellow;">
+//             <li>${nome}</li>
+//             <li>${punti}</li>
+//             <li>${falli}</li>
+//         </ul>
+//         `
+//     }    
+// } 
